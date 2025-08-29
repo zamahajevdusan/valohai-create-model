@@ -49,7 +49,7 @@ def main():
         print("✅ Model created:")
         print(json.dumps(resp.json(), indent=2))
         print(json.dumps({
-            "model_url": f"model://{valohai.parameters("name").value}"
+            "model_url": f"model://{valohai.parameters('name').value}"
         }, indent=4))
     else:
         print(f"❌ Error {resp.status_code}:\n{resp.text}", file=sys.stderr)
