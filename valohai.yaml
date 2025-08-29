@@ -45,6 +45,7 @@
       type: string
       optional: false
 - pipeline:
+    reuse-executions: true
     name: create_model_and_version
     nodes:
     - name: create_model
