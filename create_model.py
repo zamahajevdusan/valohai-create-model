@@ -18,8 +18,7 @@ def main():
     if not api_token:
         print("❌ Missing API token. Set VALOHAI_API_TOKEN env var.", file=sys.stderr)
         sys.exit(2)
-
-    # Normalize descriptions: the string "null" (any case) → None
+        
     descriptions = [{
         "category": "overview",
         "title": "",
@@ -43,7 +42,6 @@ def main():
         "Content-Type": "application/json",
     }
     payload = json.dumps(payload)
-    print(payload)
     resp = requests.post(MODEL_API_URL, headers=headers, data=payload, timeout=60)
     if resp.status_code in (200, 201):
         print("✅ Model created:")
