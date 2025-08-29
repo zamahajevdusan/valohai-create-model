@@ -27,10 +27,8 @@
       type: string
       optional: false
       choices:
-      - private
-      - shared
+      - owner_organization
       - teams
-      - public
     - name: associated_projects
       type: string
       optional: true
