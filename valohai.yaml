@@ -21,7 +21,7 @@
       optional: false
     - name: descriptions
       type: string
-      default: "null" # will become JSON null
+      multiple: separate
       optional: true
     - name: access_mode
       type: string
