@@ -32,7 +32,7 @@ def main():
     payload = {
         "owner": valohai.parameters("owner").value,
         "name": valohai.parameters("model_name").value,
-        "slug": valohai.parameters("slug").value,
+        "slug": valohai.parameters("model_slug").value,
         "descriptions": descriptions,
         "access_mode": valohai.parameters("access_mode").value,
         "associated_projects": associated_projects,
@@ -50,7 +50,7 @@ def main():
         print(json.dumps(resp.json(), indent=2))
         print()
         print(json.dumps({
-            "model_url": f"model://{valohai.parameters('model_name').value}"
+            "model_url": f"model://{valohai.parameters('model_slug').value}"
         }, indent=4))
     else:
         print(f"❌ Error {resp.status_code}:\n{resp.text}", file=sys.stderr)

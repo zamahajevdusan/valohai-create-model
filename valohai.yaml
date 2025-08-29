@@ -16,7 +16,7 @@
     - name: model_name
       type: string
       optional: false
-    - name: slug
+    - name: model_slug
       type: string
       optional: false
     - name: access_mode
