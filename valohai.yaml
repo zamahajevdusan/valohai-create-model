@@ -19,10 +19,18 @@
     - name: slug
       type: string
       optional: false
-    - name: descriptions
+    - name: description_category
       type: string
-      multiple: separate
-      optional: true
+      default: overview
+      optional: false
+    - name: description_title
+      type: string
+      default: ""
+      optional: false
+    - name: description_body
+      type: string
+      default: ""
+      optional: false
     - name: access_mode
       type: string
       optional: false

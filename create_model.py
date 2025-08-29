@@ -4,8 +4,11 @@ import os
 import sys
 import requests
 import valohai
+import urllib
 
-URL = os.getenv("VALOHAI_URL", "https://app.valohai.com/api/v0/models/")
+VALOHAI_URL = os.getenv("VALOHAI_URL", "https://app.valohai.com/")
+MODEL_API = "api/v0/models/"
+MODEL_API_URL = urllib.parse.urljoin(VALOHAI_URL, MODEL_API)
 
 
 def main():
@@ -25,7 +28,6 @@ def main():
 
     # Normalize associated projects: comma-separated → list (skip empties)
     associated_projects = valohai.parameters("associated_projects").value
-    print(associated_projects)
 
     payload = {
         "owner": valohai.parameters("owner").value,
@@ -42,7 +44,7 @@ def main():
     }
     payload = json.dumps(payload)
     print(payload)
-    resp = requests.post(URL, headers=headers, data=payload)
+    resp = requests.post(MODEL_API_URL, headers=headers, data=payload, timeout=60)
     if resp.status_code in (200, 201):
         print("✅ Model created:")
         print(json.dumps(resp.json(), indent=2))
