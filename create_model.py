@@ -48,6 +48,7 @@ def main():
     if resp.status_code in (200, 201):
         print("✅ Model created:")
         print(json.dumps(resp.json(), indent=2))
+        print()
         print(json.dumps({
             "model_url": f"model://{valohai.parameters('name').value}"
         }, indent=4))
