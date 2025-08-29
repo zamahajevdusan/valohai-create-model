@@ -17,17 +17,17 @@ def main():
         sys.exit(2)
 
     # Normalize descriptions: the string "null" (any case) → None
-    descriptions = valohai.parameters("descriptions")
+    descriptions = valohai.parameters("descriptions").value
 
     # Normalize associated projects: comma-separated → list (skip empties)
-    associated_projects = valohai.parameters("associated_projects")
+    associated_projects = valohai.parameters("associated_projects").value
 
     payload = {
-        "owner": valohai.parameters("owner"),
-        "name": valohai.parameters("name"),
-        "slug": valohai.parameters("slug"),
+        "owner": valohai.parameters("owner").value,
+        "name": valohai.parameters("name").value,
+        "slug": valohai.parameters("slug").value,
         "descriptions": descriptions,
-        "access_mode": valohai.parameters("access_mode"),
+        "access_mode": valohai.parameters("access_mode").value,
         "associated_projects": associated_projects,
     }
 
