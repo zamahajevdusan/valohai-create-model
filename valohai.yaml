@@ -1,5 +1,5 @@
 - step:
-    name: create-model
+    name: create_model
     image: python:3.11
     command:
     - pip install requests valohai-utils
@@ -54,4 +54,4 @@
       type: execution
       step: create_model_version
     edges:
-    - [ create_model.metadata.model_url, create_model_version.parameters.model_url ]
+    - [ create_model.metadata.model_url, create_version.parameters.model_url ]
