@@ -17,7 +17,7 @@ def main():
         sys.exit(2)
 
     # Normalize descriptions: the string "null" (any case) → None
-    descriptions = valohai.parameters("descriptions").value
+    descriptions = None
 
     # Normalize associated projects: comma-separated → list (skip empties)
     associated_projects = valohai.parameters("associated_projects").value
