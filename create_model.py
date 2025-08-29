@@ -21,9 +21,9 @@ def main():
 
     # Normalize descriptions: the string "null" (any case) → None
     descriptions = [{
-        "category": valohai.parameters("description_category").value,
-        "title": valohai.parameters("description_title").value,
-        "body": valohai.parameters("description_body").value
+        "category": "overview",
+        "title": "",
+        "body": ""
     }]
 
     # Normalize associated projects: comma-separated → list (skip empties)

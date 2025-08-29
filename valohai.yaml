@@ -19,22 +19,6 @@
     - name: slug
       type: string
       optional: false
-    - name: description_category
-      type: string
-      default: overview
-      choices:
-      - overview
-      - additional_details
-      - intended_uses
-      optional: false
-    - name: description_title
-      type: string
-      default: ""
-      optional: true
-    - name: description_body
-      type: string
-      default: ""
-      optional: true
     - name: access_mode
       type: string
       optional: false
