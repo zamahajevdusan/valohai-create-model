@@ -1,4 +1,4 @@
-# Create a Model in Valohai (from inside an Execution)
+# Create a Model in Valohai (from an Execution)
 
 This is an example of using Valohai API to create a new Model in Valohai.
 
