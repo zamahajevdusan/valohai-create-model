@@ -3,7 +3,7 @@
     image: python:3.11
     command:
     - pip install requests valohai-utils
-    - python create_model.py"
+    - python create_model.py
 
     environment-variables:
     - name: VALOHAI_API_TOKEN
