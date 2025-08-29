@@ -41,18 +41,20 @@
       filename: model.h5
       optional: false
     parameters:
-    - name: model_url
-      type: string
-      optional: false
+      - name: model_url
+        optional: false
 - pipeline:
     reuse-executions: true
     name: create_model_and_version
     nodes:
-    - name: create_model
-      type: execution
-      step: create_model
-    - name: create_version
-      type: execution
-      step: create_model_version
+      - name: create_model
+        type: execution
+        step: create_model
+      - name: create_model_version
+        type: execution
+        step: create_model_version
+        override:
+          parameters:
+            - name: model_url
     edges:
-    - [ create_model.metadata.model_url, create_version.parameters.model_url ]
+      - [create_model.metadata.model_url, create_model_version.parameter.model_url]
