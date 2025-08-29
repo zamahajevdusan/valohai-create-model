@@ -29,3 +29,29 @@
       type: string
       multiple: separate
       optional: false
+
+- step:
+    name: create_model_version
+    image: python:3.11
+    command:
+    - pip install valohai-utils
+    - python create_model_version.py
+    inputs:
+    - name: model
+      filename: model.h5
+      optional: false
+    parameters:
+    - name: model_url
+      type: string
+      optional: false
+- pipeline:
+    name: create_model_and_version
+    nodes:
+    - name: create_model
+      type: execution
+      step: create_model
+    - name: create_version
+      type: execution
+      step: create_model_version
+    edges:
+    - [ create_model.metadata.model_url, create_model_version.parameters.model_url ]
