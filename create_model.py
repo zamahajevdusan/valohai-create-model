@@ -21,6 +21,7 @@ def main():
 
     # Normalize associated projects: comma-separated → list (skip empties)
     associated_projects = valohai.parameters("associated_projects").value
+    print(associated_projects)
 
     payload = {
         "owner": valohai.parameters("owner").value,
