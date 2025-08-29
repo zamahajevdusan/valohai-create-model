@@ -4,35 +4,32 @@
     command:
     - pip install requests valohai-utils
     - python create_model.py"
+
     environment-variables:
     - name: VALOHAI_API_TOKEN
-      value: "{parameters.api_token}"
+
     parameters:
-      owner:
-        type: integer
-        required: true
-      name:
-        type: string
-        required: true
-      slug:
-        type: string
-        required: true
-      descriptions:
-        type: string
-        default: "null" # will become JSON null
-        required: false
-      access_mode:
-        type: string
-        required: true
-        choices:
-        - private
-        - shared
-        - teams
-        - public
-      associated_projects:
-        type: string
-        required: false
-      api_token:
-        type: string
-        secret: true
-        required: true
+    - name: owner
+      type: integer
+      optional: false
+    - name: name
+      type: string
+      optional: false
+    - name: slug
+      type: string
+      optional: false
+    - name: descriptions
+      type: string
+      default: "null" # will become JSON null
+      optional: true
+    - name: access_mode
+      type: string
+      optional: false
+      choices:
+      - private
+      - shared
+      - teams
+      - public
+    - name: associated_projects
+      type: string
+      optional: true
