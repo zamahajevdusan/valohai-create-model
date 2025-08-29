@@ -13,7 +13,7 @@
     - name: owner
       type: integer
       optional: false
-    - name: name
+    - name: model_name
       type: string
       optional: false
     - name: slug
