@@ -36,8 +36,9 @@ def main():
         "Authorization": f"Token {api_token}",
         "Content-Type": "application/json",
     }
-
-    resp = requests.post(URL, headers=headers, data=json.dumps(payload))
+    payload = json.dumps(payload)
+    print(payload)
+    resp = requests.post(URL, headers=headers, data=payload)
     if resp.status_code in (200, 201):
         print("✅ Model created:")
         print(json.dumps(resp.json(), indent=2))
