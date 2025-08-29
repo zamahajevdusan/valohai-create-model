@@ -30,5 +30,5 @@
       - owner_organization
       - teams
     - name: associated_projects
-      type: string
-      optional: true
+      type: list
+      optional: false
