@@ -2,7 +2,7 @@ import valohai
 import json
 import shutil
 
-model_url = valohai.parameters("model_url")
+model_url = valohai.parameters("model_url").value
 
 metadata = {
     "model.h5": {
