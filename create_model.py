@@ -44,7 +44,7 @@ def main():
     payload = json.dumps(payload)
     resp = requests.post(MODEL_API_URL, headers=headers, data=payload, timeout=60)
     if resp.status_code in (200, 201):
-        print("✅ Model created:")
+        print("Model created:")
         print()
         print(json.dumps({
             "model_url": f"model://{valohai.parameters('model_slug').value}"
