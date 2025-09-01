@@ -49,7 +49,7 @@ def main():
         print()
         print(json.dumps({
             "model_url": f"model://{valohai.parameters('model_slug').value}"
-        }, indent=4))
+        }))
     else:
         print(f"❌ Error {resp.status_code}:\n{resp.text}", file=sys.stderr)
         sys.exit(1)
